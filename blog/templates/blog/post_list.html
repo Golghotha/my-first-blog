@@ -5,13 +5,18 @@
 	<body>
 		<div>
 			<h1><a href="">Django Blog</h1>
+			<!--{{post}} -->
 		</div>
 
+		{% for post in posts %}
 		<div>
-			<p> Publish: 30.07.2016, 09:13hrs</p>
-			<h2><a href="">My first post</h2>
-			<p> OOjojojoj oj ojj o j jo jo o </p>
+			<p> published:{{ post.published_date }}</p>
+			<h2><a href="">{{ post.title }}</a></h2>
+			<p> {{ post.text|linebreaksbr }}</p>
 		</div>
+		{%endfor%}
+
+		<!--
 
 		<div>
 			<p> Publish: 30.07.2016, 09:13hrs</p>
@@ -19,6 +24,9 @@
 			<p> OOjojojoj oj ojj o j jo jo o </p>
 
 		</div>
+
+		-->
+
 		<p> Hi there! </p>
 		<p> It Works! </p>
 	</body>
